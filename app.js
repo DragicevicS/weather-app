@@ -1,4 +1,5 @@
 const input = document.querySelector('input');
+const loader = document.querySelector('.loader');
 const unitToggle = document.querySelector('.unit-toggle');
 const tempC = document.querySelector('.temp-c');
 const tempF = document.querySelector('.temp-f');
@@ -18,17 +19,24 @@ async function showWeather(cityName, t) {
     
     if(forecast.status == 200) {
       h1.textContent = `${forecastWeather.location.name}`;
-      lastUpdate.textContent= `(last update: ${forecastWeather.current.last_updated.slice(11)})`;
+      lastUpdate.textContent= `(last update: ${forecastWeather.current.last_updated.slice(11)} local time)`;
       currentTemp.textContent = `${forecastWeather.current.temp_c} °C`
       conditionText.textContent = forecastWeather.current.condition.text;
       currentImg.src = `./images${forecastWeather.current.condition.icon.slice(34)}`;
-      currentMaxTemp.textContent = `Max : ${forecastWeather.forecast.forecastday[0].day.maxtemp_c} °C`;
-      currentMinTemp.textContent = `Min t: ${forecastWeather.forecast.forecastday[0].day.mintemp_c} °C`;
-    } else h1.textContent = forecastWeather.error.message;
+      currentMaxTemp.textContent = `Max: ${forecastWeather.forecast.forecastday[0].day.maxtemp_c} °C`;
+      currentMinTemp.textContent = `Min: ${forecastWeather.forecast.forecastday[0].day.mintemp_c} °C`;
+      loader.style.visibility = 'hidden';
+    } else {
+      h1.textContent = forecastWeather.error.message;
+      loader.style.visibility = 'hidden';
+    };
 };
 
 input.addEventListener("keypress", (e) => {
-  if (e.key === "Enter" && input.value != '') showWeather(input.value);
+  if (e.key === "Enter" && input.value != '') {
+    loader.style.visibility = 'visible';
+    showWeather(input.value);
+  };
 });
 
 unitToggle.addEventListener('click', (e) => {

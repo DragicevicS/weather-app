@@ -53,6 +53,20 @@ input {
   border: 2px solid var(--color-4);
 }
 
+.loader {
+  border: 5px solid white;
+  border-top: 5px solid var(--color-4);
+  border-radius: 50%;
+  width: 2em;
+  height: 2em;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 .unit-toggle {
   display: flex;
   justify-content: flex-end;
