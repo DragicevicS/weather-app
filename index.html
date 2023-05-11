@@ -9,11 +9,45 @@
   <script src="app.js" defer></script>
 </head>
 <body>
-  <div class="content">
-    <input type="text">
-    <button type="button" id="submit-btn">Change</button>
-    <br>
-    <p></p>
+  <div class="content-div">
+    <div class="input-div">
+      <label for="city-name">Choose city:</label>
+      <input type="text" name="city-name">
+      <div class="unit-toggle">
+        <span class="temp-c" style="visibility: visible;">&deg;C</span>
+        <div></div>
+        <span class="temp-f" style="visibility: hidden;">&deg;F</span>
+      </div>
+    </div>
+    <div class="current-div">
+      <div>
+        <h1></h1>
+        <p class="last-update"></p>
+      </div>
+      <div class="current-info">
+        <div>
+          <p class="current-temp"></p>
+          <p class="condition-text"></p>
+        </div>
+        <img src="#" class="current-img" draggable="false">
+      </div>
+      <div>
+        <p class="current-max-temp"></p>
+        <p class="current-min-temp"></p>
+      </div>
+    </div>
+    <div class="day-to-day-div">
+      <div class="slide-div" id="0"></div>
+      <div class="slide-div" id="1"></div>
+      <div class="slide-div" id="2"></div>
+      <div class="slide-div" id="3"></div>
+      <div class="slide-div" id="4"></div>
+    </div>
+    <div class="additional-info-div"></div>
   </div>
+  <footer>
+    Powered by
+    <a href="https://www.weatherapi.com/" title="Free Weather API" target="_blank"><img src='//cdn.weatherapi.com/v4/images/weatherapi_logo.png' alt="Weather data by WeatherAPI.com"></a>
+  </footer>
 </body>
 </html>
