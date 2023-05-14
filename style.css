@@ -31,13 +31,15 @@ body {
   align-items: center;
   gap: 1em;
   padding: 1em;
-  width: 50%;
-  height: 50%;
+  width: max(590px, 50%);
+  height: min-content;
   background-color: var(--color-1);
   color: white;
   border-radius: 20px;
   box-shadow: 0 0 15px black;
 }
+
+/* input, loader, toggle */
 
 .input-div {
   display: flex;
@@ -87,12 +89,14 @@ input {
   height: 1.7em;
   background-color: var(--color-4);
   border: 2px solid var(--color-4);
-  border-radius: 100%;
+  border-radius: 50%;
 }
 
 .unit-toggle:hover {
   cursor: pointer;
 }
+
+/* current info */
 
 .current-div {
   display: flex;
@@ -126,6 +130,86 @@ h1 {
   font-size: 1.1rem;
   color: var(--color-4);
 }
+
+/* day-to-day info */
+
+.day-to-day-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-btn {
+  height: 50%;
+  padding: 10px;
+  background-color: var(--color-2);
+  color: var(--color-3);
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 10px;
+  transition: transform .4s ease;
+}
+
+.slide-btn:hover {
+  cursor: pointer;
+  color: var(--color-4);
+  transform: scale(1.1);
+}
+
+.slide-track {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  width: 60%;
+  overflow: hidden;
+}
+
+.slide-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 0 2em;
+  width: 5em;
+}
+
+.slide-div img {
+  width: 3em;
+  height: 3em;
+}
+
+
+/* additional info */
+
+.additional-info-div {
+  display: grid;
+  grid-template: repeat(4, 3em) / repeat(2, 1fr);
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.additional-info-div h3 {
+  grid-area: 1/1/2/3;
+  color: var(--color-4);
+}
+
+.info-div {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.info-div p {
+  font-size: 1.1rem;
+}
+
+.info-p {
+  color: var(--color-4);
+}
+
+/* footer */
 
 footer {
   display: flex;
