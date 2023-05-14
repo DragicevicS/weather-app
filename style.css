@@ -12,6 +12,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Wix Madefor Text', sans-serif;
+  cursor: default;
 }
 
 body {
@@ -31,12 +32,16 @@ body {
   align-items: center;
   gap: 1em;
   padding: 1em;
-  width: max(590px, 50%);
+  width: max(595px, 50%);
   height: min-content;
   background-color: var(--color-1);
   color: white;
   border-radius: 20px;
   box-shadow: 0 0 15px black;
+}
+
+.content-div>h3 {
+  text-decoration: underline;
 }
 
 /* input, loader, toggle */
@@ -53,6 +58,10 @@ input {
   color: white;
   font-size: 1.1rem;
   border: 2px solid var(--color-4);
+}
+
+input:hover {
+  cursor: text;
 }
 
 .loader {
@@ -92,7 +101,9 @@ input {
   border-radius: 50%;
 }
 
-.unit-toggle:hover {
+.unit-toggle:hover,
+.unit-toggle div:hover,
+.unit-toggle span:hover {
   cursor: pointer;
 }
 
@@ -160,9 +171,8 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1em;
-  width: 60%;
-  overflow: hidden;
+  gap: 1.5em;
+  width: 80%;
 }
 
 .slide-div {
@@ -170,13 +180,16 @@ h1 {
   flex-direction: column;
   align-items: center;
   gap: 5px;
-  padding: 0 2em;
-  width: 5em;
+  width: 6em;
 }
 
 .slide-div img {
   width: 3em;
   height: 3em;
+}
+
+#div-2 {
+  color: var(--color-4);
 }
 
 
@@ -190,19 +203,30 @@ h1 {
   width: 100%;
 }
 
+.additional-info-div>div {
+  display: flex;
+  justify-content: center;
+}
+
 .additional-info-div h3 {
   grid-area: 1/1/2/3;
-  color: var(--color-4);
+  text-decoration: underline;
 }
 
 .info-div {
   display: flex;
-  justify-content: center;
-  gap: 6px;
+  align-items: center;
+  gap: 0.4em;
+  width: 11.5em;
 }
 
 .info-div p {
   font-size: 1.1rem;
+}
+
+.info-div img {
+  width: 1.5em;
+  height: 1.5m;
 }
 
 .info-p {
