@@ -32,8 +32,8 @@ body {
   align-items: center;
   gap: 1em;
   padding: 1em;
-  width: max(595px, 50%);
-  height: min-content;
+  width: max(47em, 50%);
+  height: 37.5em;
   background-color: var(--color-1);
   color: white;
   border-radius: 20px;
@@ -58,6 +58,7 @@ input {
   color: white;
   font-size: 1.1rem;
   border: 2px solid var(--color-4);
+  border-radius: 10px;
 }
 
 input:hover {
@@ -144,54 +145,30 @@ h1 {
 
 /* day-to-day info */
 
-.day-to-day-div {
+.day-to-day-container {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 1em;
+  width: 100%;
 }
 
-.slide-btn {
-  height: 50%;
-  padding: 10px;
-  background-color: var(--color-2);
-  color: var(--color-3);
-  font-size: 1.5rem;
-  border: none;
-  border-radius: 10px;
-  transition: transform .4s ease;
-}
-
-.slide-btn:hover {
-  cursor: pointer;
-  color: var(--color-4);
-  transform: scale(1.1);
-}
-
-.slide-track {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1.5em;
-  width: 80%;
-}
-
-.slide-div {
+.dtd-div {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 5px;
-  width: 6em;
+  width: 5.5em;
 }
 
-.slide-div img {
+.dtd-div img {
   width: 3em;
   height: 3em;
 }
 
-#div-2 {
+.today-div h2 {
   color: var(--color-4);
 }
-
 
 /* additional info */
 
@@ -217,7 +194,7 @@ h1 {
   display: flex;
   align-items: center;
   gap: 0.4em;
-  width: 11.5em;
+  width: 11.9em;
 }
 
 .info-div p {
@@ -241,4 +218,9 @@ footer {
   gap: 1em;
   color: var(--color-1);
   font-style: italic;
+}
+
+footer a,
+footer img {
+  cursor: pointer;
 }

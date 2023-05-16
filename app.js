@@ -12,7 +12,7 @@ const currentImg = document.querySelector('.current-img');
 const currentMaxTemp = document.querySelector('.current-max-temp');
 const currentMinTemp = document.querySelector('.current-min-temp');
 
-const dayToDayDiv = document.querySelector('.day-to-day-div');
+const dayToDayDiv = document.querySelector('.day-to-day-container');
 const h3 = document.querySelector('h3');
 const dayOfWeek = document.querySelectorAll('.day-of-week');
 const dayOfWeekImg = document.querySelectorAll('.day-of-week-img');
@@ -24,7 +24,6 @@ const additionalInfoDiv = document.querySelector('.additional-info-div');
 const infoP = document.querySelectorAll('.info-p');
 
 const date = new Date();
-
 let day = date.getDate();
 let month = date.getMonth() + 1;
 let year = date.getFullYear();
@@ -84,7 +83,7 @@ async function showWeather(cityName, t) {
       infoP[5].textContent = forecastWeather.forecast.forecastday[0].astro.sunset;
 
       // displaying °C or °F based on the slider position
-      if (t == 'c') {
+      if (t == 'c') { // displaying units in °C, mb, km and kph
         currentTemp.textContent = `${forecastWeather.current.temp_c} °C`
         currentMaxTemp.textContent = `Max: ${forecastWeather.forecast.forecastday[0].day.maxtemp_c} °C`;
         currentMinTemp.textContent = `Min: ${forecastWeather.forecast.forecastday[0].day.mintemp_c} °C`;
@@ -106,7 +105,7 @@ async function showWeather(cityName, t) {
         infoP[2].textContent = `${forecastWeather.current.wind_kph} kph`;
         infoP[3].textContent = `${forecastWeather.current.vis_km} km`;
       }
-      if (t == 'f'){
+      if (t == 'f'){ // displaying units in °F, in, miles and mph
         currentTemp.textContent = `${forecastWeather.current.temp_f} °F`
         currentMaxTemp.textContent = `Max: ${forecastWeather.forecast.forecastday[0].day.maxtemp_f} °F`;
         currentMinTemp.textContent = `Min: ${forecastWeather.forecast.forecastday[0].day.mintemp_f} °F`;
@@ -157,6 +156,3 @@ unitToggle.addEventListener('click', (e) => { // toggling displayed units
     if (tempC.style.visibility == 'visible' && input.value != '')showWeather(input.value, 'c');
     if (tempF.style.visibility == 'visible' && input.value != '')showWeather(input.value, 'f');
 });
-
-
-
