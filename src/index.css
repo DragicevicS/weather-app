@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Wix+Madefor+Text:wght@500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply p-0 m-0 box-border font-sans;
+  }
+}
+
+@layer utilities {
+  .toggle-button-group .MuiToggleButtonGroup-grouped.Mui-selected {
+    @apply bg-teal opacity-100 !important;
+  }
+}
+
+/* Swiper */
+
+.swiper-pagination-bullet-active {
+  @apply bg-lightBlue w-[9px] h-[9px];
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  @apply text-4xl text-lightBlue;
+}
+
+@media (max-width: 440px) {
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    @apply hidden;
+  }
+}

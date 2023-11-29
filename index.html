@@ -1,130 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Weather</title>
-  <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="style.css">
-  <script src="app.js" defer></script>
-</head>
-<body>
-  <div class="content-div">
-    <div class="input-div">
-      <label for="city-name">Enter city name:</label>
-      <input type="text" name="city-name">
-      <div class="loader" style="visibility: hidden;"></div>
-      <div class="unit-toggle">
-        <span class="temp-c" style="visibility: visible;">&deg;C</span>
-        <div></div>
-        <span class="temp-f" style="visibility: hidden;">&deg;F</span>
-      </div>
-    </div>
-    <div class="current-div">
-      <div>
-        <h1></h1>
-        <p class="last-update"></p>
-      </div>
-      <div class="current-info">
-        <div>
-          <p class="current-temp"></p>
-          <p class="condition-text"></p>
-        </div>
-        <img src="#" class="current-img" draggable="false" style="display: none;">
-      </div>
-      <div>
-        <p class="current-max-temp"></p>
-        <p class="current-min-temp"></p>
-      </div>
-    </div>
-  <h3 style="visibility: hidden;">Day by day info</h3>
-    <div class="day-to-day-container" style="visibility: hidden;">
-        <div class="dtd-div">
-          <h2 class="day-of-week"></h2>
-          <img src="#" class="day-of-week-img" draggable="false">
-          <h3 class="avg-temp" title="Average temperature"></h3>
-          <h4 class="min-max-temp" title="Min/Max temperature"></h4>
-          <h4 class="chance-of-rain" title="Chance of rain"></h4>
-        </div>
-        <div class="dtd-div">
-          <h2 class="day-of-week"></h2>
-          <img src="#" class="day-of-week-img" draggable="false">
-          <h3 class="avg-temp" title="Average temperature"></h3>
-          <h4 class="min-max-temp" title="Min/Max temperature"></h4>
-          <h4 class="chance-of-rain" title="Chance of rain"></h4>
-        </div>
-        <div class="dtd-div today-div">
-          <h2 class="day-of-week">Today</h2>
-          <img src="#" class="day-of-week-img" draggable="false">
-          <h3 class="avg-temp" title="Average temperature"></h3>
-          <h4 class="min-max-temp" title="Min/Max temperature"></h4>
-          <h4 class="chance-of-rain" title="Chance of rain"></h4>
-        </div>
-        <div class="dtd-div">
-          <h2 class="day-of-week"></h2>
-          <img src="#" class="day-of-week-img" draggable="false">
-          <h3 class="avg-temp" title="Average temperature"></h3>
-          <h4 class="min-max-temp" title="Min/Max temperature"></h4>
-          <h4 class="chance-of-rain" title="Chance of rain"></h4>
-        </div>
-        <div class="dtd-div">
-          <h2 class="day-of-week"></h2>
-          <img src="#" class="day-of-week-img" draggable="false">
-          <h3 class="avg-temp" title="Average temperature"></h3>
-          <h4 class="min-max-temp" title="Min/Max temperature"></h4>
-          <h4 class="chance-of-rain" title="Chance of rain"></h4>
-        </div>
-    </div>
-    <div class="additional-info-div" style="visibility: hidden;">
-      <h3>Additional info</h3>
-      <div>
-        <div class="info-div">
-          <img src="./images/humidity.png" draggable="false">
-          <p>Humidity:</p>
-          <p class="info-p"></p>
-        </div>
-      </div>
-      <div>
-        <div class="info-div">
-          <img src="./images/pressure.png" draggable="false">
-          <p>Pressure:</p>
-          <p class="info-p"></p>
-        </div>
-      </div>
-      <div>
-        <div class="info-div">
-          <img src="./images/wind.png" draggable="false">
-          <p>Wind: </p>
-          <p class="info-p"></p>
-        </div>
-      </div>
-      <div>
-        <div class="info-div">
-          <img src="./images/visibility.png" draggable="false">
-          <p>Visibility:</p>
-          <p class="info-p"></p>
-        </div>
-      </div>
-      <div>
-        <div class="info-div">
-          <img src="./images/sunrise.png" draggable="false">
-          <p>Sunrise:</p>
-          <p class="info-p"></p>
-        </div>
-      </div>
-      <div>
-        <div class="info-div">
-          <img src="./images/sunset.png" draggable="false">
-          <p>Sunset:</p>
-          <p class="info-p"></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <footer>
-    Powered by
-    <a href="https://www.weatherapi.com/" title="Free Weather API" target="_blank"><img src='//cdn.weatherapi.com/v4/images/weatherapi_logo.png' alt="Weather data by WeatherAPI.com"></a>
-  </footer>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="shortcut icon"
+      href="./src/assets/favicon.ico"
+      type="image/x-icon"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Simple weather app, powered by WeatherAPI."
+    />
+    <title>Weather App</title>
+  </head>
+  <body class="h-full md:h-screen bg-teal">
+    <div
+      id="root"
+      class="flex flex-col justify-center items-center gap-4 w-full h-full"
+    ></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
