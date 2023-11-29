@@ -55,6 +55,9 @@ const Main = () => {
             value={inputValue}
             className="max-w-[85%] sm:w-auto px-3 py-1 bg-gray font-semibold outline-none border-b-2 border-white placeholder-lightBlue placeholder-opacity-80 hover:border-lightBlue focus:border-lightBlue ease-in focus:placeholder-gray duration-200"
             onChange={(e) => setInputValue(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") handleFetchClick();
+            }}
           />
           <div>
             {!isLoading ? (
