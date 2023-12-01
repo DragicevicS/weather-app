@@ -42,7 +42,7 @@ Contributions to the project are also appreciated. Please feel free to fork the 
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE]() file for details.
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
 
 ## Acknowledgments
 
