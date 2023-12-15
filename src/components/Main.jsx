@@ -21,7 +21,7 @@ const Main = () => {
   const [weatherData, setWeatherData] = useState(null);
   const [unit, setUnit] = useState("celsius");
 
-  const handleFetchClick = async () => {
+  const handleFetchData = async () => {
     if (inputValue.trim()) {
       setIsLoading(true);
       try {
@@ -29,8 +29,9 @@ const Main = () => {
         setWeatherData(data);
       } catch (error) {
         setWeatherData(null);
+      } finally {
+        setIsLoading(false);
       }
-      setIsLoading(false);
     }
   };
 
@@ -56,7 +57,7 @@ const Main = () => {
             className="max-w-[85%] sm:w-auto px-3 py-1 bg-gray font-semibold outline-none border-b-2 border-white placeholder-lightBlue placeholder-opacity-80 hover:border-lightBlue focus:border-lightBlue ease-in focus:placeholder-gray duration-200"
             onChange={(e) => setInputValue(e.target.value)}
             onKeyDown={(e) => {
-              if (e.key === "Enter") handleFetchClick();
+              if (e.key === "Enter") handleFetchData();
             }}
           />
           <div>
@@ -67,7 +68,7 @@ const Main = () => {
                 title="Search city"
                 draggable="false"
                 className="w-8 h-8 cursor-pointer hover:scale-105 ease-out duration-150"
-                onClick={handleFetchClick}
+                onClick={handleFetchData}
               />
             ) : (
               <div
